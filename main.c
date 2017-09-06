@@ -2,10 +2,6 @@
 #include <stdlib.h>
 #include "collection.h"
 
-
-
-
-
 int main()
 {
     int limit;
