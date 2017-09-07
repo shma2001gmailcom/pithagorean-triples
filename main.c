@@ -14,15 +14,15 @@ int main()
     }
     struct node* result = pyth(limit);
     struct node* current = result;
+    FILE* file = fopen("answer.txt", "w");
+    fprintf(file, "**\n\n");
     while (current != NULL)
     {
         struct triangle* triple = current->data;
-        printf("%d %d %d\n", triple->small_catet, triple->big_catet, triple->hypotenuse);
+        fprintf(file, "%d %d %d\n", triple->small_catet, triple->big_catet, triple->hypotenuse);
         current = current->next;
     }
+    fclose(file);
     current = result;
     return 0;
 }
-
-
-
