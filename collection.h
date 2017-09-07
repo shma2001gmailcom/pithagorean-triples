@@ -16,14 +16,12 @@ struct triangle
 
 struct node* pyth(int);
 
-struct node* append(struct triangle* data, struct node* root, struct node* current);
+struct node* append(struct triangle* data, struct node* current);
 
 struct node* end(struct node* current);
 
 struct node* createRoot(struct triangle* triple, struct node* root, struct node* current);
 
 struct triangle* make_triple(int small, int big, int hypo);
-
-struct triangle initial();
 
 #endif // LIST_H_INCLUDED
