@@ -49,7 +49,6 @@ struct node* pyth(int limit)
             hypo = m*m + n*n;
             if(hypo > limit) break;
             struct triangle* triple = make_triple(m*m - n*n, 2*m*n, hypo);
-            printf("\n%d %d %d from (%d, %d)\n ", m*m - n*n, 2*m*n, hypo, m, n);
             append(triple, root, current);
             current = current->next;
         }
