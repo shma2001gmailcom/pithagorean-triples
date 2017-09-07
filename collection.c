@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "collection.h"
 
-struct node* append(struct triangle* triple, struct node* root, struct node* current)
+struct node* append(struct triangle* triple, struct node* current)
 {
     current = end(current);
     current->next = malloc(sizeof(struct node));
@@ -24,7 +24,7 @@ struct node* end(struct node* current)
     return current;
 }
 
-struct node* createRoot(struct triangle* triple, struct node* root, struct node* current)
+struct node* create_root(struct triangle* triple, struct node* root, struct node* current)
 {
     root = malloc(sizeof(struct node));
     root->next = 0;
@@ -37,11 +37,11 @@ struct node* pyth(int limit)
 {
     struct node* root = 0;
     struct node* current = 0;
-    struct triangle first = initial();
-    root = createRoot(&first, root, current);
+    struct triangle* first = make_triple(2, 3, 4);
+    root = create_root(first, root, current);
     current = end(root);
     int hypo = 0;
-    int m = 2;
+    int m = 3;
     while (hypo < limit)
     {
         for (int n = 1; n < m; ++n)
@@ -49,7 +49,7 @@ struct node* pyth(int limit)
             hypo = m*m + n*n;
             if(hypo > limit) break;
             struct triangle* triple = make_triple(m*m - n*n, 2*m*n, hypo);
-            append(triple, root, current);
+            append(triple, current);
             current = current->next;
         }
         ++m;
@@ -66,16 +66,3 @@ struct triangle* make_triple(int small, int big, int hypo)
     result->hypotenuse = hypo;
     return result;
 }
-
-struct triangle initial()
-{
-    struct triangle INITIAL;
-    INITIAL.small_catet = 3;
-    INITIAL.big_catet = 4;
-    INITIAL.hypotenuse = 5;
-    return INITIAL;
-}
-
-
-
-
