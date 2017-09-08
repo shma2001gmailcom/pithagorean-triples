@@ -4,18 +4,15 @@
 
 int main()
 {
-    int limit;
-    printf("Type positive integer greater than 2 and less then 100000000 : ");
-    scanf("%d", &limit);
-    if(limit < 2 || limit >= 100000000)
+    int limit = 0;
+    while(limit < 2 || limit >= 100000000)
     {
-        printf("input is incorrect.");
-        return 0;
+        printf("Type positive integer greater than 2 and less then 100000000 : ");
+        scanf("%d", &limit);
     }
     struct node* result = pyth(limit);
     struct node* current = result;
-    FILE* file = fopen("answer.txt", "w");
-    fprintf(file, "**\n\n");
+    FILE* file = fopen("../../answer.txt", "w");
     while (current != NULL)
     {
         struct triangle* triple = current->data;
