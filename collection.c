@@ -2,6 +2,25 @@
 #include <stdlib.h>
 #include "collection.h"
 
+
+void print_greeting(char* file_name)
+{
+    size_t read;
+    char* buf = malloc(SIZE);
+    if (buf == NULL)
+    {
+        printf("out of memory.");
+    }
+    FILE* file = fopen(file_name, "r");
+    while ((read = fread(buf, 1, sizeof buf, file)) > 0)
+        fwrite(buf, 1, read, stdout);
+    if (ferror(file))
+    {
+        print_greeting("error.txt");
+    }
+    fclose(file);
+}
+
 struct node* append(struct triangle* triple, struct node* current)
 {
     current = end(current);

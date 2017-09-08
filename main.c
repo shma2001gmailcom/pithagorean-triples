@@ -2,12 +2,14 @@
 #include <stdlib.h>
 #include "collection.h"
 
+
 int main()
 {
+    print_greeting("greeting.txt");
     int limit = 0;
     while(limit < 2 || limit >= 100000000)
     {
-        printf("Type positive integer greater than 2 and less then 100000000 : ");
+        print_greeting("error.txt");
         scanf("%d", &limit);
     }
     struct node* result = pyth(limit);
@@ -23,3 +25,5 @@ int main()
     current = result;
     return 0;
 }
+
+
