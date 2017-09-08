@@ -1,0 +1,4 @@
+This routine calculates 'pithagorean triples', such an integer
+arrays (a, b, c) that sum of squires of the a and b is equals
+to square of c. The calculations are bounded by specifying a
+max value for c.
