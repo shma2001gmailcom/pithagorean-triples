@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include "collection.h"
 
-
 int main()
 {
     print_greeting("greeting.txt");

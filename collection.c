@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include "collection.h"
 
-
 void print_greeting(char* file_name)
 {
     size_t read;

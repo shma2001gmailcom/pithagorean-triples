@@ -2,7 +2,6 @@
 #define LIST_H_INCLUDED
 #define SIZE 1024
 
-
 struct node
 {
     struct triangle* data;
