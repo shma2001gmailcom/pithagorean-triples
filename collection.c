@@ -11,8 +11,10 @@ void print_greeting(char* const file_name)
     }
     FILE* const file = fopen(file_name, "r");
     size_t read;
-    while ((read = fread(buf, 1, sizeof buf, file)) > 0) {
-        fwrite(buf, 1, read, stdout);}
+    while ((read = fread(buf, 1, sizeof buf, file)) > 0)
+    {
+        fwrite(buf, 1, read, stdout);
+    }
     if (ferror(file))
     {
         print_greeting("error.txt");
