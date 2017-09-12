@@ -2,15 +2,15 @@
 #include <stdlib.h>
 #include "collection.h"
 
-void print_greeting(char* file_name)
+void print_greeting(char* const file_name)
 {
-    size_t read;
-    char* buf = malloc(SIZE);
+    char* const buf = malloc(SIZE);
     if (buf == NULL)
     {
         printf("out of memory.");
     }
-    FILE* file = fopen(file_name, "r");
+    FILE* const file = fopen(file_name, "r");
+    size_t read;
     while ((read = fread(buf, 1, sizeof buf, file)) > 0) {
         fwrite(buf, 1, read, stdout);}
     if (ferror(file))
@@ -20,7 +20,7 @@ void print_greeting(char* file_name)
     fclose(file);
 }
 
-struct node* append(struct triangle* triple, struct node* current)
+struct node* append(struct triangle* const triple, struct node* current)
 {
     current = end(current);
     current->next = malloc(sizeof(struct node));
@@ -42,7 +42,7 @@ struct node* end(struct node* current)
     return current;
 }
 
-struct node* create_root(struct triangle* triple, struct node* root, struct node* current)
+struct node* create_root(struct triangle* const triple, struct node* root, struct node* current)
 {
     root = malloc(sizeof(struct node));
     root->next = 0;
@@ -51,11 +51,11 @@ struct node* create_root(struct triangle* triple, struct node* root, struct node
     return current;
 }
 
-struct node* pyth(int limit)
+struct node* pyth(const int limit)
 {
     struct node* root = 0;
     struct node* current = 0;
-    struct triangle* first = make_triple(2, 3, 4);
+    struct triangle* const first = make_triple(2, 3, 4);
     root = create_root(first, root, current);
     current = end(root);
     int hypo = 0;
@@ -66,7 +66,7 @@ struct node* pyth(int limit)
         {
             hypo = m*m + n*n;
             if(hypo > limit) break;
-            struct triangle* triple = make_triple(m*m - n*n, 2*m*n, hypo);
+            struct triangle* const triple = make_triple(m*m - n*n, 2*m*n, hypo);
             append(triple, current);
             current = current->next;
         }
@@ -76,9 +76,9 @@ struct node* pyth(int limit)
     return root;
 }
 
-struct triangle* make_triple(int small, int big, int hypo)
+struct triangle* make_triple(const int small,const int big, const int hypo)
 {
-    struct triangle* result = (struct triangle*) malloc(sizeof(struct triangle));
+    struct triangle* const result = (struct triangle*) malloc(sizeof(struct triangle));
     result->small_catet = small;
     result->big_catet = big;
     result->hypotenuse = hypo;
