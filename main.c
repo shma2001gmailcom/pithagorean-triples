@@ -6,7 +6,7 @@ int main()
 {
     print_greeting("greeting.txt");
     int limit = 0;
-    while(limit < 2 || limit > 600000000)
+    while (limit < 2 || limit > 600000000)
     {
         print_greeting("error.txt");
         scanf("%d", &limit);

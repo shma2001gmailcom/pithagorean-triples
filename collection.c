@@ -34,9 +34,9 @@ struct node* append(struct triangle* const triple, struct node* current)
 
 struct node* end(struct node* current)
 {
-    if ( current != 0 )
+    if (current != 0)
     {
-        while ( current->next != 0)
+        while (current->next != 0)
         {
             current = current->next;
         }
@@ -67,7 +67,7 @@ struct node* pyth(const int limit)
         for (int n = 1; n < m; ++n)
         {
             hypo = m*m + n*n;
-            if(hypo > limit) break;
+            if (hypo > limit) break;
             struct triangle* const triple = make_triple(m*m - n*n, 2*m*n, hypo);
             append(triple, current);
             current = current->next;
