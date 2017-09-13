@@ -15,16 +15,16 @@ struct triangle
     int hypotenuse;
 };
 
-void print_greeting(char* file_name);
+void print_greeting(char* const file_name);
 
-struct node* pyth(int);
+struct node* const pyth(const int);
 
-struct node* append(struct triangle* data, struct node* current);
+struct node* const append(struct triangle* const data, struct node* current);
 
-struct node* end(struct node* current);
+struct node* const end(struct node* current);
 
-struct node* create_root(struct triangle* triple, struct node* root, struct node* current);
+struct node* const create_root(struct triangle* const triple, struct node* const root, struct node* current);
 
-struct triangle* make_triple(int small, int big, int hypo);
+struct triangle* const make_triple(const int small, const int big, const int hypo);
 
 #endif // LIST_H_INCLUDED

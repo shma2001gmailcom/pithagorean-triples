@@ -22,7 +22,7 @@ void print_greeting(char* const file_name)
     fclose(file);
 }
 
-struct node* append(struct triangle* const triple, struct node* current)
+struct node* const append(struct triangle* const triple, struct node* current)
 {
     current = end(current);
     current->next = malloc(sizeof(struct node));
@@ -32,7 +32,7 @@ struct node* append(struct triangle* const triple, struct node* current)
     return current;
 }
 
-struct node* end(struct node* current)
+struct node* const end(struct node* current)
 {
     if (current != 0)
     {
@@ -44,7 +44,7 @@ struct node* end(struct node* current)
     return current;
 }
 
-struct node* create_root(struct triangle* const triple, struct node* root, struct node* current)
+struct node* const create_root(struct triangle* const triple, struct node* root, struct node* current)
 {
     root = malloc(sizeof(struct node));
     root->next = 0;
@@ -53,7 +53,7 @@ struct node* create_root(struct triangle* const triple, struct node* root, struc
     return current;
 }
 
-struct node* pyth(const int limit)
+struct node* const pyth(const int limit)
 {
     struct node* root = 0;
     struct node* current = 0;
@@ -78,7 +78,7 @@ struct node* pyth(const int limit)
     return root;
 }
 
-struct triangle* make_triple(const int small,const int big, const int hypo)
+struct triangle* const make_triple(const int small,const int big, const int hypo)
 {
     struct triangle* const result = (struct triangle*) malloc(sizeof(struct triangle));
     result->small_catet = small;
