@@ -1,1 +1,0 @@
-Type an integer, c, greater than 2 and less then 600000000, CTRL+C to exit:

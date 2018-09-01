@@ -4,11 +4,11 @@
 
 int main()
 {
-    print_greeting("greeting.txt");
+    print_greeting("../resources/greeting.txt");
     int limit = 0;
     while (limit < 2 || limit > 600000000)
     {
-        print_greeting("error.txt");
+        print_greeting("../resources/error.txt");
         scanf("%d", &limit);
     }
     struct node* const result = pyth(limit);
@@ -21,7 +21,6 @@ int main()
         current = current->next;
     }
     fclose(file);
-    current = result;
     return 0;
 }
 

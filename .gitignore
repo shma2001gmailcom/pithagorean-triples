@@ -6,3 +6,5 @@
 /bin
 *.txt
 *.bak
+/target
+/.idea
